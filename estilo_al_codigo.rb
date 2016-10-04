@@ -1,5 +1,5 @@
 class PERSON
-  life_stage = { childhood: 12, teenager: 19, adult: 50 }
+  @@life_stage = { childhood: 12, teenager: 19, adult: 50 }
    LEGAL_AGE = 18
     attr_accessor :name
       attr_reader :age
@@ -10,11 +10,11 @@ class PERSON
     end
 
     def life_stage
-      if @age <= life_stage[:childhood]
+      if @age <= @@life_stage[:childhood]
           :childhood
-      elsif @age <= life_stage[:teenager]
+      elsif @age <= @@life_stage[:teenager]
           :teenager
-      elsif @age <= life_stage[:adult]
+      elsif @age <= @@life_stage[:adult]
           :adult
       else
           :elder
